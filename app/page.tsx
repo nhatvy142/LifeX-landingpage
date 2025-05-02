@@ -210,8 +210,9 @@ export default async function Home() {
                   <Image
                     src={
                       member.fields.photo?.fields.file.url ||
-                      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
-                     || "/placeholder.svg"}
+                      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" ||
+                      "/placeholder.svg"
+                    }
                     alt={member.fields.name}
                     width={128}
                     height={128}
@@ -291,8 +292,9 @@ export default async function Home() {
                   <Image
                     src={
                       article.fields.featuredImage?.fields.file.url ||
-                      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                     || "/placeholder.svg"}
+                      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" ||
+                      "/placeholder.svg"
+                    }
                     alt={article.fields.title}
                     width={400}
                     height={200}
@@ -350,8 +352,9 @@ export default async function Home() {
                   <Image
                     src={
                       project.fields.featuredImage?.fields.file.url ||
-                      "https://images.unsplash.com/photo-1581093451887-5920828efeea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                     || "/placeholder.svg"}
+                      "https://images.unsplash.com/photo-1581093451887-5920828efeea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" ||
+                      "/placeholder.svg"
+                    }
                     alt={project.fields.title}
                     width={400}
                     height={200}
@@ -570,4 +573,124 @@ export default async function Home() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={2}
-                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.\
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold">Phone</h4>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      <a href="tel:+16031234567" className="hover:text-primary">
+                        (603) 123-4567
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+                <h4 className="text-lg font-semibold mb-4">Subscribe to Our Newsletter</h4>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">
+                  Stay updated with our latest research and events.
+                </p>
+                <form className="space-y-4">
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Your Email Address"
+                      className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                      required
+                    />
+                  </div>
+                  <Button type="submit" className="w-full btn-primary">
+                    Subscribe
+                  </Button>
+                </form>
+              </div>
+            </div>
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+              <h3 className="text-2xl font-bold mb-4">Schedule a Meeting</h3>
+              <form className="space-y-4">
+                <div>
+                  <label htmlFor="name" className="sr-only">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name *"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="sr-only">
+                    Your Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email *"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="organization" className="sr-only">
+                    Organization
+                  </label>
+                  <input
+                    type="text"
+                    id="organization"
+                    placeholder="Organization"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="interest" className="sr-only">
+                    Area of Interest
+                  </label>
+                  <select
+                    id="interest"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    required
+                    defaultValue=""
+                  >
+                    <option value="" disabled>
+                      Area of Interest *
+                    </option>
+                    <option value="research">Research Collaboration</option>
+                    <option value="industry">Industry Partnership</option>
+                    <option value="investment">Investment Opportunities</option>
+                    <option value="student">Student Opportunities</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="message" className="sr-only">
+                    Your Message
+                  </label>
+                  <textarea
+                    id="message"
+                    placeholder="Your Message *"
+                    rows={4}
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    required
+                  ></textarea>
+                </div>
+                <div className="flex items-start">
+                  <input type="checkbox" id="consent" className="mt-1 mr-2" required />
+                  <label htmlFor="consent" className="text-sm text-gray-600 dark:text-gray-400">
+                    I consent to LifeX Labs collecting and storing my data for the purpose of responding to my inquiry.
+                  </label>
+                </div>
+                <Button type="submit" className="w-full btn-primary">
+                  Submit Request
+                </Button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
