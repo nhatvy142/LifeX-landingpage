@@ -4,9 +4,21 @@ import { getNews, getPeople, getProjects } from "@/lib/contentful"
 import { Button } from "@/components/ui/button"
 
 export default async function Home() {
-  const newsArticles = await getNews(3)
-  const teamMembers = await getPeople(4)
-  const projects = await getProjects(3)
+  // Add error handling for data fetching
+  let newsArticles = []
+  let teamMembers = []
+  let projects = []
+
+  try {
+    const [newsData, peopleData, projectsData] = await Promise.all([getNews(3), getPeople(4), getProjects(3)])
+
+    newsArticles = newsData || []
+    teamMembers = peopleData || []
+    projects = projectsData || []
+  } catch (error) {
+    console.error("Error fetching data:", error)
+    // Continue with empty arrays as fallback
+  }
 
   return (
     <>
@@ -204,69 +216,82 @@ export default async function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member: any) => (
-              <div key={member.sys.id} className="card text-center p-6">
-                <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-white dark:border-gray-800 shadow-md">
-                  <Image
-                    src={
-                      member.fields.photo?.fields.file.url ||
-                      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" ||
-                      "/placeholder.svg"
-                    }
-                    alt={member.fields.name}
-                    width={128}
-                    height={128}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <h3 className="text-xl font-bold mb-1">{member.fields.name}</h3>
-                <p className="text-primary font-medium mb-3">{member.fields.role}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{member.fields.shortBio}</p>
-                <div className="flex justify-center space-x-3">
-                  {member.fields.linkedin && (
-                    <a
-                      href={member.fields.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-500 hover:text-primary dark:text-gray-400"
-                    >
-                      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                      </svg>
-                    </a>
-                  )}
-                  {member.fields.twitter && (
-                    <a
-                      href={member.fields.twitter}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-500 hover:text-primary dark:text-gray-400"
-                    >
-                      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                      </svg>
-                    </a>
-                  )}
-                  {member.fields.googleScholar && (
-                    <a
-                      href={member.fields.googleScholar}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-500 hover:text-primary dark:text-gray-400"
-                    >
-                      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path
-                          d="M12 14.121l-2.317 2.317a4 4 0 11-5.657-5.657l5.657-5.657a4 4 0 015.657 5.657l-1.413 1.413"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                        />
-                      </svg>
-                    </a>
-                  )}
-                </div>
-              </div>
-            ))}
+            {teamMembers.length > 0
+              ? teamMembers.map((member: any) => (
+                  <div key={member.sys.id} className="card text-center p-6">
+                    <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-white dark:border-gray-800 shadow-md">
+                      <Image
+                        src={
+                          member.fields.photo?.fields.file.url ||
+                          "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" ||
+                          "/placeholder.svg" ||
+                          "/placeholder.svg"
+                        }
+                        alt={member.fields.name}
+                        width={128}
+                        height={128}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <h3 className="text-xl font-bold mb-1">{member.fields.name}</h3>
+                    <p className="text-primary font-medium mb-3">{member.fields.role}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{member.fields.shortBio}</p>
+                    <div className="flex justify-center space-x-3">
+                      {member.fields.linkedin && (
+                        <a
+                          href={member.fields.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-500 hover:text-primary dark:text-gray-400"
+                        >
+                          <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                          </svg>
+                        </a>
+                      )}
+                      {member.fields.twitter && (
+                        <a
+                          href={member.fields.twitter}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-500 hover:text-primary dark:text-gray-400"
+                        >
+                          <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                          </svg>
+                        </a>
+                      )}
+                      {member.fields.googleScholar && (
+                        <a
+                          href={member.fields.googleScholar}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-500 hover:text-primary dark:text-gray-400"
+                        >
+                          <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                              d="M12 14.121l-2.317 2.317a4 4 0 11-5.657-5.657l5.657-5.657a4 4 0 015.657 5.657l-1.413 1.413"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                            />
+                          </svg>
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                ))
+              : // Fallback content when no team members are available
+                Array.from({ length: 4 }).map((_, index) => (
+                  <div key={index} className="card text-center p-6">
+                    <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-white dark:border-gray-800 shadow-md bg-gray-200 dark:bg-gray-700"></div>
+                    <h3 className="text-xl font-bold mb-1">Team Member</h3>
+                    <p className="text-primary font-medium mb-3">Researcher</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                      Contributing to groundbreaking research in health technology and cognitive science.
+                    </p>
+                  </div>
+                ))}
           </div>
           <div className="text-center mt-12">
             <Link href="/people">
@@ -286,49 +311,77 @@ export default async function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {newsArticles.map((article: any) => (
-              <div key={article.sys.id} className="card overflow-hidden">
-                <div className="h-48 overflow-hidden">
-                  <Image
-                    src={
-                      article.fields.featuredImage?.fields.file.url ||
-                      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" ||
-                      "/placeholder.svg"
-                    }
-                    alt={article.fields.title}
-                    width={400}
-                    height={200}
-                    className="w-full h-full object-cover transition-transform hover:scale-105"
-                  />
-                </div>
-                <div className="p-6">
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
-                    {new Date(article.fields.date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </p>
-                  <h3 className="text-xl font-bold mb-3">{article.fields.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">{article.fields.excerpt}</p>
-                  <Link
-                    href={`/news/${article.fields.slug}`}
-                    className="text-primary font-medium inline-flex items-center"
-                  >
-                    Read More
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 ml-2"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            ))}
+            {newsArticles.length > 0
+              ? newsArticles.map((article: any) => (
+                  <div key={article.sys.id} className="card overflow-hidden">
+                    <div className="h-48 overflow-hidden">
+                      <Image
+                        src={
+                          article.fields.featuredImage?.fields.file.url ||
+                          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" ||
+                          "/placeholder.svg" ||
+                          "/placeholder.svg"
+                        }
+                        alt={article.fields.title}
+                        width={400}
+                        height={200}
+                        className="w-full h-full object-cover transition-transform hover:scale-105"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                        {new Date(article.fields.date).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}
+                      </p>
+                      <h3 className="text-xl font-bold mb-3">{article.fields.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-400 mb-4">{article.fields.excerpt}</p>
+                      <Link
+                        href={`/news/${article.fields.slug}`}
+                        className="text-primary font-medium inline-flex items-center"
+                      >
+                        Read More
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-4 w-4 ml-2"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                ))
+              : // Fallback content when no news articles are available
+                Array.from({ length: 3 }).map((_, index) => (
+                  <div key={index} className="card overflow-hidden">
+                    <div className="h-48 overflow-hidden bg-gray-200 dark:bg-gray-700"></div>
+                    <div className="p-6">
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                        {new Date().toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}
+                      </p>
+                      <h3 className="text-xl font-bold mb-3">Latest Research Development</h3>
+                      <p className="text-gray-600 dark:text-gray-400 mb-4">
+                        Exciting new developments in our research on cognitive enhancement and health monitoring
+                        technologies.
+                      </p>
+                      <span className="text-primary font-medium inline-flex items-center">Coming Soon</span>
+                    </div>
+                  </div>
+                ))}
           </div>
           <div className="text-center mt-12">
             <Link href="/news">
@@ -346,43 +399,64 @@ export default async function Home() {
             <p className="text-lg text-gray-600 dark:text-gray-400">Explore our innovative research initiatives</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {projects.map((project: any) => (
-              <div key={project.sys.id} className="card overflow-hidden">
-                <div className="h-48 overflow-hidden">
-                  <Image
-                    src={
-                      project.fields.featuredImage?.fields.file.url ||
-                      "https://images.unsplash.com/photo-1581093451887-5920828efeea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" ||
-                      "/placeholder.svg"
-                    }
-                    alt={project.fields.title}
-                    width={400}
-                    height={200}
-                    className="w-full h-full object-cover transition-transform hover:scale-105"
-                  />
-                </div>
-                <div className="p-6">
-                  <p className="text-sm text-primary font-medium mb-2">{project.fields.category}</p>
-                  <h3 className="text-xl font-bold mb-3">{project.fields.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">{project.fields.shortDescription}</p>
-                  <Link
-                    href={`/projects/${project.fields.slug}`}
-                    className="text-primary font-medium inline-flex items-center"
-                  >
-                    View Project
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 ml-2"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            ))}
+            {projects.length > 0
+              ? projects.map((project: any) => (
+                  <div key={project.sys.id} className="card overflow-hidden">
+                    <div className="h-48 overflow-hidden">
+                      <Image
+                        src={
+                          project.fields.featuredImage?.fields.file.url ||
+                          "https://images.unsplash.com/photo-1581093451887-5920828efeea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" ||
+                          "/placeholder.svg" ||
+                          "/placeholder.svg"
+                        }
+                        alt={project.fields.title}
+                        width={400}
+                        height={200}
+                        className="w-full h-full object-cover transition-transform hover:scale-105"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <p className="text-sm text-primary font-medium mb-2">{project.fields.category}</p>
+                      <h3 className="text-xl font-bold mb-3">{project.fields.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-400 mb-4">{project.fields.shortDescription}</p>
+                      <Link
+                        href={`/projects/${project.fields.slug}`}
+                        className="text-primary font-medium inline-flex items-center"
+                      >
+                        View Project
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-4 w-4 ml-2"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                ))
+              : // Fallback content when no projects are available
+                Array.from({ length: 3 }).map((_, index) => (
+                  <div key={index} className="card overflow-hidden">
+                    <div className="h-48 overflow-hidden bg-gray-200 dark:bg-gray-700"></div>
+                    <div className="p-6">
+                      <p className="text-sm text-primary font-medium mb-2">Research</p>
+                      <h3 className="text-xl font-bold mb-3">Innovative Project</h3>
+                      <p className="text-gray-600 dark:text-gray-400 mb-4">
+                        Cutting-edge research project focused on improving cognitive health and human potential.
+                      </p>
+                      <span className="text-primary font-medium inline-flex items-center">Coming Soon</span>
+                    </div>
+                  </div>
+                ))}
           </div>
           <div className="text-center mt-12">
             <Link href="/projects">
