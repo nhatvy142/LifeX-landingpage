@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Title - LifeX Future & Health Labs</title>
+  <meta name="description" content="Detailed information about our innovative research project at LifeX Labs.">
+  <meta name="keywords" content="LifeX, AI, wearables, cognitive health, longevity, research project">
+  <meta name="author" content="LifeX Labs">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#34D399">
+  <meta name="copyright" content="© 2025 LifeX Labs">
+  <meta property="og:title" content="Project Title - LifeX Future & Health Labs">
+  <meta property="og:description" content="Detailed information about our innovative research project at LifeX Labs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lifexlabs.org/projects/project-title">
+  <meta property="og:image" content="https://lifexlabs.org/images/project-preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Project Title - LifeX Future & Health Labs">
+  <meta name="twitter:description" content="Detailed information about our innovative research project at LifeX Labs.">
+  <meta name="twitter:image" content="https://lifexlabs.org/images/project-preview.jpg">
+  <link rel="canonical" href="https://lifexlabs.org/projects/project-title">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== CSS Variables for Theming ===== */
+    :root {
+      --primary: #34D399;
+      --primary-dark: #10B981;
+      --primary-light: #6EE7B7;
+      --accent: #818CF8;
+      --accent-dark: #6366F1;
+      --text: #374151;
+      --text-light: #6B7280;
+      --text-dark: #111827;
+      --bg-white: #FFFFFF;
+      --bg-light: #F9FAFB;
+      --bg-gray: #F3F4F6;
+      --border-light: #E5E7EB;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --transition: all 0.3s ease;
+    }
+
+    /* ===== Base Styles ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.8;
+      color: var(--text);
+      background-color: var(--bg-white);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin-bottom: 1.8rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    a:hover, a:focus {
+      color: var(--primary);
+      outline: none;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .section-gray {
+      background-color: var(--bg-light);
+    }
+
+    /* ===== Component Styles ===== */
+    .card {
+      background: var(--bg-white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      border: 1px solid var(--border-light);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 500;
+      text-align: center;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-primary:hover, .btn-primary:focus {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* ===== Header Styles ===== */
+    header {
+      background-color: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    header.scrolled {
+      box-shadow: var(--shadow-md);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      color: white;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-weight: 500;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after, .nav-links a:focus::after {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+
+    .mobile-menu-btn:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+    }
+
+    /* ===== Project Header ===== */
+    .project-header {
+      padding-top: 120px;
+      padding-bottom: 3rem;
+      background-color: var(--bg-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    .project-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .project-title {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .project-featured-image {
+      margin-top: 2rem;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .project-featured-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ===== Project Content ===== */
+    .project-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .project-overview {
+      margin-bottom: 4rem;
+    }
+
+    .project-overview h2 {
+      font-size: 1.8rem;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .project-overview p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .project-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .project-detail-card {
+      padding: 2rem;
+    }
+
+    .project-detail-icon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-light);
+      border-radius: 50%;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .project-detail-card:hover .project-detail-icon {
+      background: var(--primary);
+      color: white;
+      transform: rotateY(360deg);
+      transition: transform 0.8s, background 0.3s, color 0.3s;
+    }
+
+    .project-detail-content h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .project-tabs {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: none; /* Firefox */
+    }
+
+    .project-tabs::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Edge */
+    }
+
+    .project-tab {
+      padding: 1rem 2rem;
+      font-weight: 500;
+      cursor: pointer;
+      position: relative;
+      color: var(--text-light);
+      background: transparent;
+      border: none;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    .project-tab.active {
+      color: var(--primary-dark);
+    }
+
+    .project-tab::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+
+    .project-tab.active::after {
+      width: 100%;
+    }
+
+    .project-tab-content {
+      display: none;
+      margin-bottom: 4rem;
+    }
+
+    .project-tab-content.active {
+      display: block;
+    }
+
+    /* Publications Tab */
+    .publications-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .publication-item {
+      background: var(--bg-white);
+      border-radius: 8px;
+      border: 1px solid var(--border-light);
+      padding: 2rem;
+      transition: var(--transition);
+    }
+
+    .publication-item:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-5px);
+    }
+
+    .publication-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .publication-authors {
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .publication-journal {
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: var(--primary-dark);
+    }
+
+    .publication-abstract {
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .publication-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      color: var(--primary-dark);
+    }
+
+    .publication-link i {
+      transition: var(--transition);
+    }
+
+    .publication-link:hover i {
+      transform: translateX(5px);
+    }
+
+    /* People Tab */
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .people-member {
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .people-member-image {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 2rem;
+      border: 3px solid var(--bg-white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .people-member-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .people-member-name {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .people-member-role {
+      color: var(--primary-dark);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .people-member-bio {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+
+    .people-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .people-social a {
+      color: var(--text-light);
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .people-social a:hover {
+      color: var(--primary);
+    }
+
+    /* Resources Tab */
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .resource-card {
+      height: 100%;
+    }
+
+    .resource-image {
+      height: 180px;
+      overflow: hidden;
+    }
+
+    .resource-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .resource-card:hover .resource-image img {
+      transform: scale(1.05);
+    }
+
+    .resource-content {
+      padding: 1.5rem;
+    }
+
+    .resource-type {
+      color: var(--primary-dark);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .resource-title {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+      color: var(--text-dark);
+    }
+
+    .resource-description {
+      margin-bottom: 1.5rem;
+      color: var(--text-light);
+    }
+
+    .resource-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      color: var(--primary-dark);
+    }
+
+    .resource-link i {
+      transition: var(--transition);
+    }
+
+    .resource-link:hover i {
+      transform: translateX(5px);
+    }
+
+    /* Related Projects */
+    .related-projects {
+      margin-top: 5rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .related-projects-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 1.8rem;
+      color: var(--text-dark);
+    }
+
+    .related-projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      height: 100%;
+    }
+
+    .project-card-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .project-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .project-card:hover .project-card-image img {
+      transform: scale(1.05);
+    }
+
+    .project-card-content {
+      padding: 1.5rem;
+    }
+
+    .project-card-category {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card-title {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+      color: var(--text-dark);
+    }
+
+    .project-card-excerpt {
+      margin-bottom: 1.5rem;
+      color: var(--text-light);
+    }
+
+    .project-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      color: var(--primary-dark);
+    }
+
+    .project-card-link i {
+      transition: var(--transition);
+    }
+
+    .project-card-link:hover i {
+      transform: translateX(5px);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background-color: var(--bg-light);
+      color: var(--text);
+      padding: 4rem 0 2rem;
+      position: relative;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(3, 1fr);
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      color: white;
+    }
+
+    .footer-logo-text {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .footer-about p {
+      margin-bottom: 1.5rem;
+      color: var(--text-light);
+    }
+
+    .footer-heading {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+      position: relative;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 1rem;
+      transition: var(--transition);
+    }
+
+    .footer-links li:hover {
+      transform: translateX(10px);
+    }
+
+    .footer-links a {
+      color: var(--text-light);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-links a i {
+      margin-right: 0.5rem;
+      color: var(--primary);
+      font-size: 0.8rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      transition: var(--transition);
+    }
+
+    .footer-contact-item:hover {
+      transform: translateX(10px);
+    }
+
+    .footer-contact-icon {
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-right: 1rem;
+      margin-top: 0.2rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .footer-social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--bg-white);
+      color: var(--text-light);
+      font-size: 1.2rem;
+      transition: var(--transition);
+      border: 1px solid var(--border-light);
+    }
+
+    .footer-social-link:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-5px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-light);
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    /* ===== Responsive Styles ===== */
+    @media (max-width: 1200px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .project-details {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .related-projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 1rem;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--bg-white);
+        border-left: 1px solid var(--border-light);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transition: var(--transition);
+        z-index: 1000;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+        z-index: 1001;
+      }
+      
+      .project-title {
+        font-size: 2rem;
+      }
+      
+      .project-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+
+      .project-details {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .project-title {
+        font-size: 1.8rem;
+      }
+      
+      .project-content {
+        padding: 3rem 1rem;
+      }
+
+      .project-tab {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+      }
+      
+      .related-projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="header-container">
+      <div class="logo">
+        <div class="logo-icon" aria-hidden="true">
+          <i class="fas fa-dna"></i>
+        </div>
+        <span class="logo-text">LifeX Labs</span>
+      </div>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#research">Research</a></li>
+          <li><a href="index.html#people">People</a></li>
+          <li><a href="index.html#news">News</a></li>
+          <li><a href="index.html#collaboration">Collaborate</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Project Header -->
+  <section class="project-header">
+    <div class="container">
+      <div class="project-meta">
+        <div class="project-meta-item">
+          <i class="far fa-calendar" aria-hidden="true"></i>
+          <span>Started: January 2023</span>
+        </div>
+        <div class="project-meta-item">
+          <i class="far fa-user" aria-hidden="true"></i>
+          <span>Project Lead: Dr. Emma Richards</span>
+        </div>
+        <div class="project-meta-item">
+          <i class="far fa-folder" aria-hidden="true"></i>
+          <span>Category: Cognitive Enhancement</span>
+        </div>
+      </div>
+      <h1 class="project-title">Earable Computing for Cognitive Enhancement</h1>
+      <p>Developing non-invasive, ear-based wearables with advanced sensors for real-time cognitive monitoring and enhancement with unprecedented accuracy.</p>
+      <div class="project-featured-image">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Close-up of the LifeX earable device with its integrated sensors and circuitry">
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Content -->
+  <div class="project-content">
+    <div class="project-overview">
+      <h2>Project Overview</h2>
+      <p>The Earable Computing for Cognitive Enhancement project represents a breakthrough in wearable technology. Our team has developed an innovative ear-based device that combines multiple sensing modalities, including EEG and PPG sensors, to monitor cognitive states with unprecedented accuracy and comfort.</p>
+      <p>This non-invasive technology enables real-time cognitive monitoring and feedback, opening new possibilities for enhancing human performance, preventing cognitive decline, and optimizing mental wellness in everyday settings.</p>
+    </div>
+
+    <div class="project-details">
+      <div class="project-detail-card card">
+        <div class="project-detail-content">
+          <div class="project-detail-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3>Multi-modal Sensing</h3>
+          <p>Our earable device combines EEG, PPG, IMU, and acoustic sensors to capture a comprehensive picture of cognitive and physiological states.</p>
+        </div>
+      </div>
+      <div class="project-detail-card card">
+        <div class="project-detail-content">
+          <div class="project-detail-icon">
+            <i class="fas fa-microchip"></i>
+          </div>
+          <h3>Edge Computing</h3>
+          <p>On-device processing algorithms maximize privacy and enable real-time analysis without constant cloud connectivity.</p>
+        </div>
+      </div>
+      <div class="project-detail-card card">
+        <div class="project-detail-content">
+          <div class="project-detail-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3>Cognitive Enhancement</h3>
+          <p>Non-invasive stimulation modalities provide gentle, personalized interventions to maintain focus and enhance performance.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Tabs -->
+    <div class="project-tabs">
+      <button class="project-tab active" data-tab="publications">Publications</button>
+      <button class="project-tab" data-tab="people">People</button>
+      <button class="project-tab" data-tab="resources">Resources</button>
+    </div>
+
+    <!-- Publications Tab -->
+    <div class="project-tab-content active" id="publications-tab">
+      <div class="publications-list">
+        <div class="publication-item">
+          <h3 class="publication-title">Breakthrough in Cognitive Enhancement Using Earable Technology</h3>
+          <p class="publication-authors">Richards, E., Song, M., Vu, T., Wang, S.</p>
+          <p class="publication-journal">Journal of Neural Engineering, Vol. 19, Issue 3 (2025)</p>
+          <p class="publication-abstract">This paper presents a novel earable device that combines EEG and PPG sensors for real-time cognitive monitoring and enhancement. Results from a 12-month study with 150 participants demonstrate significant improvements in sustained attention and cognitive performance.</p>
+          <a href="#" class="publication-link">Read Full Paper <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="publication-item">
+          <h3 class="publication-title">Edge Computing for Privacy-Preserving Cognitive Monitoring</h3>
+          <p class="publication-authors">Song, M., Wang, S., Richards, E., Vu, T.</p>
+          <p class="publication-journal">IEEE Transactions on Biomedical Engineering, Vol. 72 (2024)</p>
+          <p class="publication-abstract">This study presents a novel approach to privacy-preserving cognitive monitoring using edge computing on wearable devices. Our algorithms demonstrate 94% accuracy in cognitive state detection while minimizing data transmission.</p>
+          <a href="#" class="publication-link">Read Full Paper <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="publication-item">
+          <h3 class="publication-title">Non-invasive Neurostimulation Through Earable Devices</h3>
+          <p class="publication-authors">Vu, T., Richards, E., Lee, J., Sharma, P.</p>
+          <p class="publication-journal">Frontiers in Human Neuroscience, Vol. 18 (2024)</p>
+          <p class="publication-abstract">This paper explores the efficacy of various non-invasive neurostimulation modalities delivered through earable devices, showing significant potential for cognitive enhancement in real-world settings.</p>
+          <a href="#" class="publication-link">Read Full Paper <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- People Tab -->
+    <div class="project-tab-content" id="people-tab">
+      <div class="people-grid">
+        <div class="people-member card">
+          <div class="people-member-image">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Emma Richards">
+          </div>
+          <h4 class="people-member-name">Dr. Emma Richards</h4>
+          <p class="people-member-role">Project Lead</p>
+          <p class="people-member-bio">Specializes in cognitive enhancement techniques and neurofeedback systems with a background in clinical psychology. Leading the overall project direction and clinical trials.</p>
+          <div class="people-social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+          </div>
+        </div>
+        <div class="people-member card">
+          <div class="people-member-image">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Michael Song">
+          </div>
+          <h4 class="people-member-name">Dr. Michael Song</h4>
+          <p class="people-member-role">AI & Algorithm Lead</p>
+          <p class="people-member-bio">Expert in machine learning algorithms for health data analysis and predictive modeling of cognitive states. Leads the development of our edge computing algorithms.</p>
+          <div class="people-social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="people-member card">
+          <div class="people-member-image">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Sophia Wang">
+          </div>
+          <h4 class="people-member-name">Dr. Sophia Wang</h4>
+          <p class="people-member-role">Hardware Engineer</p>
+          <p class="people-member-bio">Specializes in miniaturized sensor design and low-power electronics for wearable health devices. Leads the hardware development of our earable device.</p>
+          <div class="people-social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+          </div>
+        </div>
+        <div class="people-member card">
+          <div class="people-member-image">
+            <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Tam Vu">
+          </div>
+          <h4 class="people-member-name">Dr. Tam Vu</h4>
+          <p class="people-member-role">Principal Investigator</p>
+          <p class="people-member-bio">Pioneering researcher in wearable technology with over 15 years of experience in biosignal processing and AI applications in healthcare.</p>
+          <div class="people-social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resources Tab -->
+    <div class="project-tab-content" id="resources-tab">
+      <div class="resources-grid">
+        <div class="resource-card card">
+          <div class="resource-image">
+            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Technical documentation">
+          </div>
+          <div class="resource-content">
+            <div class="resource-type">Documentation</div>
+            <h3 class="resource-title">Technical Specifications</h3>
+            <p class="resource-description">Detailed technical specifications of our earable device, including sensor types, computing capabilities, and battery performance.</p>
+            <a href="#" class="resource-link">View Document <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="resource-card card">
+          <div class="resource-image">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Research data">
+          </div>
+          <div class="resource-content">
+            <div class="resource-type">Dataset</div>
+            <h3 class="resource-title">Anonymized Study Results</h3>
+            <p class="resource-description">Access to anonymized data from our clinical trials, available for researchers to validate our findings or conduct additional analyses.</p>
+            <a href="#" class="resource-link">Access Dataset <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="resource-card card">
+          <div class="resource-image">
+            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Video presentation">
+          </div>
+          <div class="resource-content">
+            <div class="resource-type">Video</div>
+            <h3 class="resource-title">Project Overview Presentation</h3>
+            <p class="resource-description">A comprehensive video presentation detailing the project goals, methodology, and preliminary findings.</p>
+            <a href="#" class="resource-link">Watch Video <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Projects -->
+    <div class="related-projects">
+      <h2 class="related-projects-title">Related Projects</h2>
+      <div class="related-projects-grid">
+        <div class="project-card card">
+          <div class="project-card-image">
+            <img src="https://images.unsplash.com/photo-1581093451887-5920828efeea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sleep enhancement research">
+          </div>
+          <div class="project-card-content">
+            <div class="project-card-category">Sleep Research</div>
+            <h3 class="project-card-title">Optimization of Deep Sleep Using Audio Stimulation</h3>
+            <p class="project-card-excerpt">Our research on using personalized audio stimulation to enhance slow-wave sleep and improve cognitive recovery.</p>
+            <a href="#" class="project-card-link">View Project <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="project-card card">
+          <div class="project-card-image">
+            <img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Edge computing visualization">
+          </div>
+          <div class="project-card-content">
+            <div class="project-card-category">Edge Computing</div>
+            <h3 class="project-card-title">Low-Power Machine Learning for Wearable Devices</h3>
+            <p class="project-card-excerpt">Developing ultra-efficient algorithms for real-time cognitive state detection on resource-constrained devices.</p>
+            <a href="#" class="project-card-link">View Project <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <div class="footer-logo-icon" aria-hidden="true">
+              <i class="fas fa-dna"></i>
+            </div>
+            <span class="footer-logo-text">LifeX Labs</span>
+          </div>
+          <p>Pioneering the future of health through AI-driven wearables and edge computing solutions to enhance cognitive performance and extend human longevity.</p>
+          <div class="footer-social">
+            <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+            <a href="#" class="footer-social-link" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="footer-links-container">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#about"><i class="fas fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
+            <li><a href="index.html#research"><i class="fas fa-chevron-right" aria-hidden="true"></i> Research</a></li>
+            <li><a href="index.html#people"><i class="fas fa-chevron-right" aria-hidden="true"></i> Our People</a></li>
+            <li><a href="index.html#news"><i class="fas fa-chevron-right" aria-hidden="true"></i> News & Publications</a></li>
+            <li><a href="index.html#collaboration"><i class="fas fa-chevron-right" aria-hidden="true"></i> Collaborate</a></li>
+            <li><a href="index.html#contact"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-container">
+          <h4 class="footer-heading">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="fas fa-chevron-right" aria-hidden="true"></i> Publications</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right" aria-hidden="true"></i> Research Opportunities</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right" aria-hidden="true"></i> Student Positions</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right" aria-hidden="true"></i> Media Kit</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right" aria-hidden="true"></i> Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4 class="footer-heading">Contact Us</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>LifeX Labs<br>123 Innovation Drive, Suite 300<br>Hanover, NH 03755</div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div><a href="mailto:contact@lifexlabs.org">contact@lifexlabs.org</a></div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div><a href="tel:+16031234567">(603) 123-4567</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 LifeX Labs. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      const isOpen = navLinks.classList.contains('active');
+      mobileMenuBtn.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+      mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Scroll Animation
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Project Tabs
+    const projectTabs = document.querySelectorAll('.project-tab');
+    const projectTabContents = document.querySelectorAll('.project-tab-content');
+
+    projectTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs and contents
+        projectTabs.forEach(t => t.classList.remove('active'));
+        projectTabContents.forEach(c => c.classList.remove('active'));
+        
+        // Add active class to clicked tab
+        tab.classList.add('active');
+        
+        // Show corresponding content
+        const tabId = tab.getAttribute('data-tab');
+        document.getElementById(`${tabId}-tab`).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

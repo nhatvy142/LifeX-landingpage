@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breakthrough in Cognitive Enhancement Using Earable Technology - LifeX Labs</title>
+  <meta name="description" content="Our team's latest research demonstrates significant improvements in cognitive function using our proprietary earable technology, with results published in the Journal of Neural Engineering.">
+  <meta name="keywords" content="LifeX, cognitive enhancement, earable technology, wearables, research, neural engineering">
+  <meta name="author" content="LifeX Labs">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#34D399">
+  <meta name="copyright" content="© 2025 LifeX Labs">
+  <link rel="canonical" href="https://lifexlabs.org/news/cognitive-enhancement-breakthrough">
+  <meta property="og:title" content="Breakthrough in Cognitive Enhancement Using Earable Technology">
+  <meta property="og:description" content="Our team's latest research demonstrates significant improvements in cognitive function using our proprietary earable technology.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://lifexlabs.org/news/cognitive-enhancement-breakthrough">
+  <meta property="og:image" content="https://lifexlabs.org/images/news-cognitive-enhancement.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Breakthrough in Cognitive Enhancement Using Earable Technology">
+  <meta name="twitter:description" content="Our team's latest research demonstrates significant improvements in cognitive function using our proprietary earable technology.">
+  <meta name="twitter:image" content="https://lifexlabs.org/images/news-cognitive-enhancement.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== CSS Variables for Theming ===== */
+    :root {
+      --primary: #34D399;
+      --primary-dark: #10B981;
+      --primary-light: #6EE7B7;
+      --accent: #818CF8;
+      --accent-dark: #6366F1;
+      --text: #374151;
+      --text-light: #6B7280;
+      --text-dark: #111827;
+      --bg-white: #FFFFFF;
+      --bg-light: #F9FAFB;
+      --bg-gray: #F3F4F6;
+      --border-light: #E5E7EB;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --transition: all 0.3s ease;
+    }
+
+    /* ===== Base Styles ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.8;
+      color: var(--text);
+      background-color: var(--bg-white);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin-bottom: 1.8rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    a:hover, a:focus {
+      color: var(--primary);
+      outline: none;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .section-gray {
+      background-color: var(--bg-light);
+    }
+
+    /* ===== Component Styles ===== */
+    .card {
+      background: var(--bg-white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      border: 1px solid var(--border-light);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 500;
+      text-align: center;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-primary:hover, .btn-primary:focus {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* ===== Header Styles ===== */
+    header {
+      background-color: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    header.scrolled {
+      box-shadow: var(--shadow-md);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      color: white;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-weight: 500;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after, .nav-links a:focus::after {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+
+    .mobile-menu-btn:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+    }
+
+    /* Article Styles */
+    .article-header {
+      padding-top: 120px;
+      padding-bottom: 3rem;
+      background-color: var(--bg-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    .article-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .article-title {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .article-featured-image {
+      margin-top: 2rem;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .article-featured-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .article-body h2 {
+      font-size: 1.8rem;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .article-body h3 {
+      font-size: 1.4rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .article-body p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .article-body ul, .article-body ol {
+      margin-bottom: 1.5rem;
+      margin-left: 2rem;
+    }
+
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+
+    .article-body blockquote {
+      margin: 2rem 0;
+      padding: 1.5rem 2rem;
+      border-left: 4px solid var(--primary);
+      background: var(--bg-light);
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+    }
+
+    .article-body blockquote p:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-image {
+      margin: 2rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .article-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .article-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .article-tag {
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      background: var(--bg-light);
+      border: 1px solid var(--border-light);
+      border-radius: 30px;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      transition: var(--transition);
+    }
+
+    .article-tag:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .article-share {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .article-share-title {
+      margin-bottom: 0;
+      font-size: 1rem;
+      color: var(--text-dark);
+    }
+
+    .social-buttons {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .social-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--bg-light);
+      color: var(--text-light);
+      font-size: 1rem;
+      transition: var(--transition);
+      border: 1px solid var(--border-light);
+    }
+
+    .social-button:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .article-navigation {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .article-nav-link {
+      padding: 1.5rem;
+      background: var(--bg-light);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+    }
+
+    .article-nav-link:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-light);
+      box-shadow: var(--shadow-md);
+    }
+
+    .article-nav-direction {
+      font-size: 0.9rem;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .article-nav-title {
+      font-size: 1.1rem;
+      margin-bottom: 0;
+      color: var(--text-dark);
+    }
+
+    .article-nav-link.prev {
+      text-align: left;
+    }
+
+    .article-nav-link.next {
+      text-align: right;
+    }
+
+    .article-nav-link.next .article-nav-direction {
+      justify-content: flex-end;
+    }
+
+    .related-articles {
+      margin-top: 5rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .related-articles-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 1.8rem;
+      color: var(--text-dark);
+    }
+
+    .related-articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .news-card {
+      height: 100%;
+    }
+
+    .news-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .news-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .news-card:hover .news-image img {
+      transform: scale(1.05);
+    }
+
+    .news-content {
+      padding: 1.5rem;
+    }
+
+    .news-date {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .news-title {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+      color: var(--text-dark);
+    }
+
+    .news-excerpt {
+      margin-bottom: 1.5rem;
+      color: var(--text-light);
+    }
+
+    .news-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      color: var(--primary-dark);
+    }
+
+    .news-link i {
+      transition: var(--transition);
+    }
+
+    .news-link:hover i {
+      transform: translateX(5px);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background-color: var(--bg-light);
+      color: var(--text);
+      padding: 4rem 0 2rem;
+      position: relative;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(3, 1fr);
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      color: white;
+    }
+
+    .footer-logo-text {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .footer-about p {
+      margin-bottom: 1.5rem;
+      color: var(--text-light);
+    }
+
+    .footer-heading {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+      position: relative;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 1rem;
+      transition: var(--transition);
+    }
+
+    .footer-links li:hover {
+      transform: translateX(10px);
+    }
+
+    .footer-links a {
+      color: var(--text-light);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-links a i {
+      margin-right: 0.5rem;
+      color: var(--primary);
+      font-size: 0.8rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      transition: var(--transition);
+    }
+
+    .footer-contact-item:hover {
+      transform: translateX(10px);
+    }
+
+    .footer-contact-icon {
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-right: 1rem;
+      margin-top: 0.2rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .footer-social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--bg-white);
+      color: var(--text-light);
+      font-size: 1.2rem;
+      transition: var(--transition);
+      border: 1px solid var(--border-light);
+    }
+
+    .footer-social-link:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-5px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-light);
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    /* ===== Responsive Styles ===== */
+    @media (max-width: 1200px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .article-navigation {
+        grid-template-columns: 1fr;
+      }
+      
+      .related-articles-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 1rem;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--bg-white);
+        border-left: 1px solid var(--border-light);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transition: var(--transition);
+        z-index: 1000;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+        z-index: 1001;
+      }
+      
+      .article-title {
+        font-size: 2rem;
+      }
+      
+      .article-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .article-title {
+        font-size: 1.8rem;
+      }
+      
+      .article-content {
+        padding: 3rem 1rem;
+      }
+      
+      .related-articles-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="header-container">
+      <div class="logo">
+        <div class="logo-icon" aria-hidden="true">
+          <i class="fas fa-dna"></i>
+        </div>
+        <span class="logo-text">LifeX Labs</span>
+      </div>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#research">Research</a></li>
+          <li><a href="index.html#people">People</a></li>
+          <li><a href="index.html#news">News</a></li>
+          <li><a href="index.html#collaboration">Collaborate</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Article Header -->
+  <section class="article-header">
+    <div class="container">
+      <div class="article-meta">
+        <div class="article-meta-item">
+          <i class="far fa-calendar" aria-hidden="true"></i>
+          <span>April 15, 2025</span>
+        </div>
+        <div class="article-meta-item">
+          <i class="far fa-user" aria-hidden="true"></i>
+          <span>Dr. Emma Richards</span>
+        </div>
+        <div class="article-meta-item">
+          <i class="far fa-folder" aria-hidden="true"></i>
+          <span>Research</span>
+        </div>
+      </div>
+      <h1 class="article-title">Breakthrough in Cognitive Enhancement Using Earable Technology</h1>
+      <p>Our team's latest research demonstrates significant improvements in cognitive function using our proprietary earable technology, with results published in the Journal of Neural Engineering.</p>
+      <div class="article-featured-image">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Close-up of the LifeX earable device with its integrated sensors and circuitry">
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <div class="article-content">
+    <div class="article-body">
+      <p>The LifeX Labs research team has achieved a significant breakthrough in cognitive enhancement technology with our latest generation of earable devices. Our study, published in the prestigious Journal of Neural Engineering, demonstrates how these  Our study, published in the prestigious Journal of Neural Engineering, demonstrates how these non-invasive devices can measure and enhance cognitive function in real-time.
+
+<p>Using a combination of electroencephalography (EEG) and photoplethysmography (PPG) sensors integrated into a comfortable, wearable ear device, our technology provides unprecedented insights into cognitive states and physiological responses.</p>
+
+<div class="article-image">
+  <img src="https://images.unsplash.com/photo-1581093458791-9d2b11a0c07d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Participant using the LifeX earable device during cognitive testing in the lab">
+</div>
+
+<h2>Key Research Findings</h2>
+<p>Our 12-month study involving 150 participants demonstrated several groundbreaking results:</p>
+<ul>
+  <li>A 27% improvement in sustained attention tasks among participants using the cognitive enhancement features</li>
+  <li>Significant reduction in cognitive fatigue during extended mental tasks</li>
+  <li>Real-time detection of stress states with 94% accuracy</li>
+  <li>Successful implementation of our proprietary neurofeedback algorithms to improve focus and mental clarity</li>
+</ul>
+
+<h2>Revolutionary Technology</h2>
+<p>What sets our earable technology apart is its combination of high-precision sensors with advanced edge computing capabilities. The devices contain:</p>
+<ul>
+  <li>Multi-channel EEG sensors that capture brain activity with medical-grade accuracy</li>
+  <li>Advanced PPG sensors monitoring blood flow and heart rate variability</li>
+  <li>Proprietary algorithms processing data in real-time on the edge</li>
+  <li>Non-invasive neurostimulation capabilities for cognitive enhancement</li>
+</ul>
+
+<blockquote>
+  <p>"This represents a quantum leap in our ability to monitor and enhance cognitive function in everyday settings. The implications for productivity, education, and overall mental wellbeing are enormous."</p>
+  <p>— Dr. Tam Vu, Lead Researcher</p>
+</blockquote>
+
+<h2>Real-World Applications</h2>
+<p>The potential applications of this technology extend far beyond laboratory settings:</p>
+
+<h3>Enhanced Learning and Education</h3>
+<p>Our devices can help optimize study sessions by detecting attention lapses and providing gentle stimulation to maintain focus. Early pilots in educational settings have shown promising results, with students reporting improved retention and reduced study time.</p>
+
+<h3>Workplace Productivity</h3>
+<p>Knowledge workers can benefit from cognitive state monitoring to optimize break timing and work patterns. The technology helps prevent mental fatigue and maintains peak cognitive performance throughout the day.</p>
+
+<h3>Clinical Applications</h3>
+<p>The precision of our monitoring capabilities opens new possibilities for early detection of cognitive changes associated with various conditions. We're currently exploring applications in early detection of cognitive decline and monitoring treatment efficacy.</p>
+
+<h2>The Road Ahead</h2>
+<p>This publication marks a significant milestone in our research, but it's just the beginning. Our team is already working on next-generation devices with enhanced capabilities:</p>
+<ul>
+  <li>Extended battery life for 24/7 monitoring</li>
+  <li>Enhanced AI capabilities for personalized cognitive optimization</li>
+  <li>Additional sensor modalities for more comprehensive physiological monitoring</li>
+  <li>Miniaturization for even greater comfort and wearability</li>
+</ul>
+
+<p>We're also expanding our clinical trials to explore applications in specific populations, including older adults at risk for cognitive decline and individuals with attention disorders.</p>
+
+<p>This breakthrough represents a significant step forward in our mission to enhance cognitive performance and extend human potential through the seamless integration of AI, wearable technology, and advanced computing.</p>
+</div>
+
+<div class="article-footer">
+  <div class="article-tags">
+    <a href="#" class="article-tag">Cognitive Enhancement</a>
+    <a href="#" class="article-tag">Wearable Technology</a>
+    <a href="#" class="article-tag">Neuroscience</a>
+    <a href="#" class="article-tag">AI</a>
+    <a href="#" class="article-tag">Edge Computing</a>
+  </div>
+
+  <div class="article-share">
+    <h4 class="article-share-title">Share this article:</h4>
+    <div class="social-buttons">
+      <a href="#" class="social-button" aria-label="Share on Twitter">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      <a href="#" class="social-button" aria-label="Share on LinkedIn">
+        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+      </a>
+      <a href="#" class="social-button" aria-label="Share on Facebook">
+        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+      </a>
+      <a href="#" class="social-button" aria-label="Share via Email">
+        <i class="fas fa-envelope" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="article-navigation">
+    <a href="news-article-3.html" class="article-nav-link prev">
+      <div class="article-nav-direction">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        Previous Article
+      </div>
+      <h5 class="article-nav-title">LifeX Labs Announces Strategic Partnership with Global Tech Firm</h5>
+    </a>
+    <a href="news-article-2.html" class="article-nav-link next">
+      <div class="article-nav-direction">
+        Next Article
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </div>
+      <h5 class="article-nav-title">LifeX Labs Presents at International AI Health Conference</h5>
+    </a>
+  </div>
+</div>
+
+<div class="related-articles">
+  <h2 class="related-articles-title">Related Articles</h2>
+  <div class="related-articles-grid">
+    <div class="news-card card">
+      <div class="news-image">
+        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dr. Tam Vu presenting at an international conference">
+      </div>
+      <div class="news-content">
+        <div class="news-date">March 28, 2025</div>
+        <h3 class="news-title">LifeX Labs Presents at International AI Health Conference</h3>
+        <p class="news-excerpt">Dr. Tam Vu delivered a keynote address on the future of AI-powered wearables in preventive healthcare.</p>
+        <a href="news-article-2.html" class="news-link">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="news-card card">
+      <div class="news-image">
+        <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="LifeX Labs team meeting with industry partners">
+      </div>
+      <div class="news-content">
+        <div class="news-date">February 10, 2025</div>
+        <h3 class="news-title">LifeX Labs Announces Strategic Partnership with Global Tech Firm</h3>
+        <p class="news-excerpt">We're excited to announce our new partnership that will accelerate the development and deployment of our technology.</p>
+        <a href="news-article-3.html" class="news-link">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-container">
+      <div class="footer-about">
+        <div class="footer-logo">
+          <div class="footer-logo-icon" aria-hidden="true">
+            <i class="fas fa-dna"></i>
+          </div>
+          <span class="footer-logo-text">LifeX Labs</span>
+        </div>
+        <p>Pioneering the future of health through AI-driven wearables and edge computing solutions to enhance cognitive performance and extend human longevity.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+          <a href="#" class="footer-social-link" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="footer-links-container">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html#about"><i class="fas fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
+          <li><a href="index.html#research"><i class="fas fa-chevron-right" aria-hidden="true"></i> Research</a></li>
+          <li><a href="index.html#people"><i class="fas fa-chevron-right" aria-hidden="true"></i> Our People</a></li>
+          <li><a href="index.html#news"><i class="fas fa-chevron-right" aria-hidden="true"></i> News & Publications</a></li>
+          <li><a href="index.html#collaboration"><i class="fas fa-chevron-right" aria-hidden="true"></i> Collaborate</a></li>
+          <li><a href="index.html#contact"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-container">
+        <h4 class="footer-heading">Resources</h4>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right" aria-hidden="true"></i> Publications</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right" aria-hidden="true"></i> Research Opportunities</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right" aria-hidden="true"></i> Student Positions</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right" aria-hidden="true"></i> Media Kit</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right" aria-hidden="true"></i> Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4 class="footer-heading">Contact Us</h4>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon" aria-hidden="true">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div>LifeX Labs<br>123 Innovation Drive, Suite 300<br>Hanover, NH 03755</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon" aria-hidden="true">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div><a href="mailto:contact@lifexlabs.org">contact@lifexlabs.org</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon" aria-hidden="true">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div><a href="tel:+16031234567">(603) 123-4567</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 LifeX Labs. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+  // Mobile Menu Toggle
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+
+  mobileMenuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    const isOpen = navLinks.classList.contains('active');
+    mobileMenuBtn.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Scroll Animation
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+</script>
+</body>
+</html>

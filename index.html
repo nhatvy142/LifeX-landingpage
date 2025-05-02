@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LifeX Future & Health Labs</title>
+  <meta name="description" content="LifeX Labs pioneers innovative health technologies through AI-driven wearables and edge computing solutions to enhance cognitive performance and extend human longevity.">
+  <meta name="keywords" content="LifeX, AI, wearables, cognitive health, longevity, future health, research, earable computing, edge computing">
+  <meta name="author" content="LifeX Labs">
+  <meta property="og:title" content="LifeX Future & Health Labs">
+  <meta property="og:description" content="Pioneering the future of health with AI and wearable technology at LifeX Labs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lifexlabs.org/">
+  <meta property="og:image" content="https://lifexlabs.org/images/lifex-social-preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LifeX Future & Health Labs">
+  <meta name="twitter:description" content="Pioneering the future of health with AI and wearable technology at LifeX Labs.">
+  <meta name="twitter:image" content="https://lifexlabs.org/images/lifex-social-preview.jpg">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#34D399">
+  <meta name="copyright" content="© 2025 LifeX Labs">
+  <link rel="canonical" href="https://lifexlabs.org/">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== CSS Variables for Theming ===== */
+    :root {
+      --primary: #34D399;
+      --primary-dark: #10B981;
+      --primary-light: #6EE7B7;
+      --accent: #818CF8;
+      --accent-dark: #6366F1;
+      --text: #374151;
+      --text-light: #6B7280;
+      --text-dark: #111827;
+      --bg-white: #FFFFFF;
+      --bg-light: #F9FAFB;
+      --bg-gray: #F3F4F6;
+      --border-light: #E5E7EB;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --transition: all 0.3s ease;
+    }
+
+    /* ===== Base Styles ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.8;
+      color: var(--text);
+      background-color: var(--bg-white);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin-bottom: 1.8rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    a:hover, a:focus {
+      color: var(--primary);
+      outline: none;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .section-gray {
+      background-color: var(--bg-light);
+    }
+
+    /* ===== Component Styles ===== */
+    .card {
+      background: var(--bg-white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      border: 1px solid var(--border-light);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 500;
+      text-align: center;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-primary:hover, .btn-primary:focus {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary-dark);
+      border: 1px solid var(--primary-dark);
+      margin-left: 1rem;
+    }
+
+    .btn-outline:hover, .btn-outline:focus {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ===== Header Styles ===== */
+    header {
+      background-color: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    header.scrolled {
+      box-shadow: var(--shadow-md);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      color: white;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-weight: 500;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after, .nav-links a:focus::after {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+
+    .mobile-menu-btn:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+    }
+
+    /* ===== Hero Section ===== */
+    #hero {
+      background: var(--bg-white);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 1s ease-out;
+      line-height: 1.1;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease-out 0.2s forwards;
+      opacity: 0;
+      color: var(--primary-dark);
+      font-weight: 500;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      animation: fadeInUp 1s ease-out 0.4s forwards;
+      opacity: 0;
+    }
+
+    .hero-cta {
+      animation: fadeInUp 1s ease-out 0.6s forwards;
+      opacity: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .hero-image {
+      position: relative;
+      animation: fadeInRight 1s ease-out 0.8s forwards;
+      opacity: 0;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ===== About Section ===== */
+    .section-title {
+      text-align: center;
+      margin-bottom: 4rem;
+      position: relative;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .section-title p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--text-light);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .about-content h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    /* ===== Research Section ===== */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .research-card {
+      padding: 2rem;
+      text-align: center;
+      height: 100%;
+    }
+
+    .research-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-light);
+      border-radius: 50%;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      font-size: 1.8rem;
+      transition: var(--transition);
+    }
+
+    .research-card:hover .research-icon {
+      background: var(--primary);
+      color: white;
+      transform: rotateY(360deg);
+      transition: transform 0.8s, background 0.3s, color 0.3s;
+    }
+
+    .research-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    /* ===== People Section ===== */
+    .people-container {
+      margin-bottom: 4rem;
+    }
+
+    .people-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .people-tab {
+      padding: 1rem 2rem;
+      font-weight: 500;
+      cursor: pointer;
+      position: relative;
+      color: var(--text-light);
+      background: transparent;
+      border: none;
+      transition: var(--transition);
+    }
+
+    .people-tab.active {
+      color: var(--primary-dark);
+    }
+
+    .people-tab::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+
+    .people-tab.active::after {
+      width: 100%;
+    }
+
+    .people-content {
+      display: none;
+    }
+
+    .people-content.active {
+      display: block;
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .people-member {
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .people-member-image {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 2rem;
+      border: 3px solid var(--bg-white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .people-member-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .people-member-name {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .people-member-role {
+      color: var(--primary-dark);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .people-member-bio {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .people-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .people-social a {
+      color: var(--text-light);
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .people-social a:hover {
+      color: var(--primary);
+    }
+
+    /* ===== News Section ===== */
+    .news-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .news-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .news-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .news-card:hover .news-image img {
+      transform: scale(1.05);
+    }
+
+    .news-content {
+      padding: 1.5rem;
+    }
+
+    .news-date {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .news-title {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .news-excerpt {
+      margin-bottom: 1.5rem;
+      color: var(--text-light);
+    }
+
+    .news-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      color: var(--primary-dark);
+    }
+
+    .news-link i {
+      transition: var(--transition);
+    }
+
+    .news-link:hover i {
+      transform: translateX(5px);
+    }
+
+    /* ===== Collaboration Section ===== */
+    .collab-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .collab-content h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .collab-benefits {
+      margin-bottom: 2rem;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .benefit-item:hover {
+      transform: translateX(10px);
+    }
+
+    .benefit-icon {
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-right: 1rem;
+      margin-top: 0.2rem;
+    }
+
+    .benefit-content strong {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .collab-image {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .collab-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: var(--transition);
+    }
+
+    /* ===== Contact Form Section ===== */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .contact-info h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .contact-details {
+      margin-bottom: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .contact-item:hover {
+      transform: translateX(10px);
+    }
+
+    .contact-icon {
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-right: 1rem;
+      margin-top: 0.2rem;
+    }
+
+    .contact-form {
+      background: var(--bg-white);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-form h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      background: var(--bg-light);
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: var(--text);
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.1);
+    }
+
+    .form-control::placeholder {
+      color: var(--text-light);
+    }
+
+    textarea.form-control {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-check {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .form-check-input {
+      margin-right: 0.5rem;
+      margin-top: 0.3rem;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border: 1px solid var(--border-light);
+      border-radius: 3px;
+      background: var(--bg-light);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .form-check-input:checked::before {
+      content: '\f00c';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--primary);
+      font-size: 0.7rem;
+    }
+
+    .form-check-input:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.1);
+    }
+
+    .form-check-label {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.1rem;
+    }
+
+    /* ===== Newsletter Section ===== */
+    .newsletter {
+      background: var(--bg-light);
+      padding: 2rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+      border: 1px solid var(--border-light);
+    }
+
+    .newsletter h4 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      color: var(--text-dark);
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .newsletter-input {
+      flex-grow: 1;
+      padding: 0.8rem 1rem;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .newsletter-input:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.1);
+    }
+
+    .newsletter-btn {
+      padding: 0.8rem 1.5rem;
+      white-space: nowrap;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background-color: var(--bg-light);
+      color: var(--text);
+      padding: 4rem 0 2rem;
+      position: relative;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(3, 1fr);
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      color: white;
+    }
+
+    .footer-logo-text {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .footer-about p {
+      margin-bottom: 1.5rem;
+      color: var(--text-light);
+    }
+
+    .footer-heading {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+      position: relative;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 1rem;
+      transition: var(--transition);
+    }
+
+    .footer-links li:hover {
+      transform: translateX(10px);
+    }
+
+    .footer-links a {
+      color: var(--text-light);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-links a i {
+      margin-right: 0.5rem;
+      color: var(--primary);
+      font-size: 0.8rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      transition: var(--transition);
+    }
+
+    .footer-contact-item:hover {
+      transform: translateX(10px);
+    }
+
+    .footer-contact-icon {
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-right: 1rem;
+      margin-top: 0.2rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .footer-social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--bg-white);
+      color: var(--text-light);
+      font-size: 1.2rem;
+      transition: var(--transition);
+      border: 1px solid var(--border-light);
+    }
+
+    .footer-social-link:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-5px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-light);
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    /* ===== Animations ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .animate-fadeIn {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .animate-fadeIn.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== Accessibility Styles ===== */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    /* ===== Responsive Styles ===== */
+    @media (max-width: 1200px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hero-grid,
+      .about-grid, 
+      .collab-container, 
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .hero-image {
+        order: -1;
+      }
+
+      .news-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+
+      .hero-title {
+        font-size: 2.8rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.3rem;
+      }
+
+      .section-title h2 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 1rem;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--bg-white);
+        border-left: 1px solid var(--border-light);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transition: var(--transition);
+        z-index: 1000;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+        z-index: 1001;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+
+      .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+      }
+
+      .btn-outline {
+        margin-left: 0;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .hero-cta .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .container {
+        padding: 0 1rem;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .hero-description {
+        font-size: 1rem;
+      }
+
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+
+      .about-content h3,
+      .collab-content h3,
+      .contact-info h3 {
+        font-size: 1.6rem;
+      }
+
+      .contact-form {
+        padding: 1.5rem;
+      }
+      
+      .news-container {
+        grid-template-columns: 1fr;
+      }
+
+      .people-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .people-tabs {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="header-container">
+      <div class="logo">
+        <div class="logo-icon" aria-hidden="true">
+          <i class="fas fa-dna"></i>
+        </div>
+        <span class="logo-text">LifeX Labs</span>
+      </div>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#people">People</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#collaboration">Collaborate</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1 class="hero-title">Pioneering the Future of Health</h1>
+          <h2 class="hero-subtitle">Where AI, Wearable Technology, and Human Potential Converge</h2>
+          <p class="hero-description">At LifeX Labs, we're developing cutting-edge AI-driven wearables and edge computing solutions to enhance cognitive performance and extend human longevity.</p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Schedule a Meeting</a>
+            <a href="#research" class="btn btn-outline">Explore Research</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Advanced wearable technology device developed by LifeX Labs">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section section-gray">
+    <div class="container">
+      <div class="section-title animate-fadeIn">
+        <h2>About LifeX Labs</h2>
+        <p>Pioneering research at the intersection of technology and human health</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-image animate-fadeIn">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Researcher working with advanced wearable technology in the LifeX lab">
+        </div>
+        <div class="about-content animate-fadeIn">
+          <h3>Redefining Health Through Technology</h3>
+          <p>The LifeX Labs for Cognitive Performance and Longevity is at the forefront of developing innovative technologies to improve cognitive health and extend human potential.</p>
+          <p>Building on a decade of groundbreaking research, our interdisciplinary team focuses on real-time biosignal tracking, automated data pipelines, and drug-free cognitive interventions that are revolutionizing how we approach health and wellness.</p>
+          <p>Our mission is to create scalable, human-centric solutions that enhance cognitive performance and promote longevity through the seamless integration of AI, wearable technology, and advanced computing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Section -->
+  <section id="research" class="section">
+    <div class="container">
+      <div class="section-title animate-fadeIn">
+        <h2>Key Research Areas</h2>
+        <p>Exploring the frontiers of cognitive enhancement and health monitoring</p>
+      </div>
+      <div class="research-grid">
+        <div class="research-card animate-fadeIn card">
+          <div class="research-content">
+            <div class="research-icon" aria-hidden="true">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3>Earable Computing</h3>
+            <p>Developing non-invasive, ear-based wearables with advanced sensors like EEG and PPG for real-time cognitive and physiological monitoring with unprecedented accuracy.</p>
+          </div>
+        </div>
+        <div class="research-card animate-fadeIn card">
+          <div class="research-content">
+            <div class="research-icon" aria-hidden="true">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3>Human-Centric Data Collection</h3>
+            <p>Utilizing automated pipelines for cost-efficient, high-integrity data acquisition to accelerate clinical trials and research outcomes with minimal participant burden.</p>
+          </div>
+        </div>
+        <div class="research-card animate-fadeIn card">
+          <div class="research-content">
+            <div class="research-icon" aria-hidden="true">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Drug-Free Cognitive Control</h3>
+            <p>Employing audio, cognitive behavioral therapy, vibration, and light-based stimulation to optimize sleep, focus, and mental health without pharmaceutical interventions.</p>
+          </div>
+        </div>
+        <div class="research-card animate-fadeIn card">
+          <div class="research-content">
+            <div class="research-icon" aria-hidden="true">
+              <i class="fas fa-microchip"></i>
+            </div>
+            <h3>Edge Computing for Healthcare</h3>
+            <p>Designing low-power algorithms for on-device privacy and real-time applications like fall detection, seizure monitoring, and cognitive performance tracking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- People Section -->
+  <section id="people" class="section section-gray">
+    <div class="container">
+      <div class="section-title animate-fadeIn">
+        <h2>Our People</h2>
+        <p>Meet the innovative minds behind our groundbreaking research and development</p>
+      </div>
+      <div class="people-container">
+        <div class="people-tabs">
+          <button class="people-tab active" data-tab="current">Current People</button>
+          <button class="people-tab" data-tab="alumni">Alumni</button>
+        </div>
+        
+        <div class="people-content active" id="current-people">
+          <div class="people-grid">
+            <div class="people-member animate-fadeIn card">
+              <div class="people-member-image">
+                <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Tam Vu">
+              </div>
+              <h4 class="people-member-name">Dr. Tam Vu</h4>
+              <p class="people-member-role">Founder & Lead Researcher</p>
+              <p class="people-member-bio">Pioneering researcher in wearable technology with over 15 years of experience in biosignal processing and AI applications in healthcare.</p>
+              <div class="people-social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+              </div>
+            </div>
+            
+            <div class="people-member animate-fadeIn card">
+              <div class="people-member-image">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Emma Richards">
+              </div>
+              <h4 class="people-member-name">Dr. Emma Richards</h4>
+              <p class="people-member-role">Senior Researcher, Cognitive Science</p>
+              <p class="people-member-bio">Specializes in cognitive enhancement techniques and neurofeedback systems with a background in clinical psychology.</p>
+              <div class="people-social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+              </div>
+            </div>
+            
+            <div class="people-member animate-fadeIn card">
+              <div class="people-member-image">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Michael Song">
+              </div>
+              <h4 class="people-member-name">Dr. Michael Song</h4>
+              <p class="people-member-role">Head of AI Research</p>
+              <p class="people-member-bio">Expert in machine learning algorithms for health data analysis and predictive modeling of cognitive states.</p>
+              <div class="people-social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            
+            <div class="people-member animate-fadeIn card">
+              <div class="people-member-image">
+                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Sophia Wang">
+              </div>
+              <h4 class="people-member-name">Dr. Sophia Wang</h4>
+              <p class="people-member-role">Lead Hardware Engineer</p>
+              <p class="people-member-bio">Specializes in miniaturized sensor design and low-power electronics for wearable health devices.</p>
+              <div class="people-social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="people-content" id="alumni-people">
+          <div class="people-grid">
+            <div class="people-member animate-fadeIn card">
+              <div class="people-member-image">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. James Lee">
+              </div>
+              <h4 class="people-member-name">Dr. James Lee</h4>
+              <p class="people-member-role">Former Research Scientist</p>
+              <p class="people-member-bio">Now leading the AI Health Initiative at Stanford University. Contributed to our early research on privacy-preserving data processing.</p>
+              <div class="people-social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+              </div>
+            </div>
+            
+            <div class="people-member animate-fadeIn card">
+              <div class="people-member-image">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Priya Sharma">
+              </div>
+              <h4 class="people-member-name">Dr. Priya Sharma</h4>
+              <p class="people-member-role">Former Head of Clinical Trials</p>
+              <p class="people-member-bio">Now Director of Research at the National Institute of Mental Health. Led our groundbreaking sleep enhancement studies.</p>
+              <div class="people-social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+              </div>
+            </div>
+            
+            <div class="people-member animate-fadeIn card">
+              <div class="people-member-image">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dr. Alex Chen">
+              </div>
+              <h4 class="people-member-name">Dr. Alex Chen</h4>
+              <p class="people-member-role">Former Software Architect</p>
+              <p class="people-member-bio">Now CTO at HealthTech Innovations. Developed our first-generation data processing pipeline and analytics platform.</p>
+              <div class="people-social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section id="news" class="section">
+    <div class="container">
+      <div class="section-title animate-fadeIn">
+        <h2>Latest News & Publications</h2>
+        <p>Stay updated with our research breakthroughs and industry developments</p>
+      </div>
+      <div class="news-container">
+        <div class="news-card animate-fadeIn card">
+          <div class="news-image">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Researcher examining brain wave patterns on a digital display">
+          </div>
+          <div class="news-content">
+            <div class="news-date">April 15, 2025</div>
+            <h3 class="news-title">Breakthrough in Cognitive Enhancement Using Earable Technology</h3>
+            <p class="news-excerpt">Our team's latest research demonstrates significant improvements in cognitive function using our proprietary earable technology, with results published in the Journal of Neural Engineering.</p>
+            <a href="news-article-1.html" class="news-link">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="news-card animate-fadeIn card">
+          <div class="news-image">
+            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dr. Tam Vu presenting at an international conference">
+          </div>
+          <div class="news-content">
+            <div class="news-date">March 28, 2025</div>
+            <h3 class="news-title">LifeX Labs Presents at International AI Health Conference</h3>
+            <p class="news-excerpt">Dr. Tam Vu delivered a keynote address on the future of AI-powered wearables in preventive healthcare at the International Conference on AI and Health in Singapore.</p>
+            <a href="news-article-2.html" class="news-link">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="news-card animate-fadeIn card">
+          <div class="news-image">
+            <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="LifeX Labs people meeting with industry partners">
+          </div>
+          <div class="news-content">
+            <div class="news-date">February 10, 2025</div>
+            <h3 class="news-title">LifeX Labs Announces Strategic Partnership with Global Tech Firm</h3>
+            <p class="news-excerpt">We're excited to announce our new partnership that will accelerate the development and deployment of our cognitive performance monitoring technology worldwide.</p>
+            <a href="news-article-3.html" class="news-link">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collaboration Section -->
+  <section id="collaboration" class="section section-gray">
+    <div class="container">
+      <div class="section-title animate-fadeIn">
+        <h2>Research Collaboration Opportunities</h2>
+        <p>Join us in shaping the future of health technology</p>
+      </div>
+      <div class="collab-container">
+        <div class="collab-content animate-fadeIn">
+          <h3>Partner With Us to Shape the Future</h3>
+          <p>We invite industry partners, research institutions, investors, and portfolio companies to co-develop and validate wearable technologies with us. Together, we can accelerate innovation and bring cutting-edge solutions to market.</p>
+          <div class="collab-benefits">
+            <div class="benefit-item">
+              <div class="benefit-icon" aria-hidden="true">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="benefit-content">
+                <strong>Access to Cutting-Edge Research</strong>
+                <p>Collaborate with leading researchers in AI, wearable technology, and cognitive science.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon" aria-hidden="true">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="benefit-content">
+                <strong>Clinical Validation</strong>
+                <p>Leverage our expertise in designing and conducting rigorous clinical studies.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon" aria-hidden="true">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="benefit-content">
+                <strong>Technology Transfer</strong>
+                <p>Opportunities for licensing and commercializing innovative technologies.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon" aria-hidden="true">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="benefit-content">
+                <strong>Joint Grant Applications</strong>
+                <p>Partner on research grants and funding opportunities to expand capabilities.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-primary">Discuss Collaboration</a>
+        </div>
+        <div class="collab-image animate-fadeIn">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Research people collaborating on a project">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-title animate-fadeIn">
+        <h2>Get in Touch</h2>
+        <p>We'd love to hear from you and explore potential collaborations</p>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info animate-fadeIn">
+          <h3>Let's Connect</h3>
+          <p>Interested in learning more about our research, collaboration opportunities, or scheduling a meeting? We'd love to hear from you.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <strong>Location</strong>
+                <p>LifeX Labs, 123 Innovation Drive, Suite 300<br>Hanover, NH 03755</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <p><a href="mailto:contact@lifexlabs.org">contact@lifexlabs.org</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <strong>Phone</strong>
+                <p><a href="tel:+16031234567">(603) 123-4567</a></p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Newsletter Signup -->
+          <div class="newsletter animate-fadeIn">
+            <h4>Subscribe to Our Newsletter</h4>
+            <p>Stay updated with our latest research and events.</p>
+            <form class="newsletter-form" id="newsletter-form">
+              <input type="email" class="newsletter-input" placeholder="Your Email Address" required aria-label="Email for newsletter">
+              <button type="submit" class="btn btn-primary newsletter-btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="contact-form animate-fadeIn">
+          <h3>Schedule a Meeting</h3>
+          <form id="meeting-form">
+            <div class="form-group">
+              <label for="name" class="sr-only">Your Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Your Name *" required>
+            </div>
+            <div class="form-group">
+              <label for="email" class="sr-only">Your Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Your Email *" required>
+            </div>
+            <div class="form-group">
+              <label for="organization" class="sr-only">Organization</label>
+              <input type="text" class="form-control" id="organization" placeholder="Organization">
+            </div>
+            <div class="form-group">
+              <label for="interest" class="sr-only">Area of Interest</label>
+              <select class="form-control" id="interest" required>
+                <option value="" disabled selected>Area of Interest *</option>
+                <option value="research">Research Collaboration</option>
+                <option value="industry">Industry Partnership</option>
+                <option value="investment">Investment Opportunities</option>
+                <option value="student">Student Opportunities</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message" class="sr-only">Your Message</label>
+              <textarea class="form-control" id="message" placeholder="Your Message *" required></textarea>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="consent" required>
+              <label class="form-check-label" for="consent">I consent to LifeX Labs collecting and storing my data for the purpose of responding to my inquiry.</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit">Submit Request</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <div class="footer-logo-icon" aria-hidden="true">
+              <i class="fas fa-dna"></i>
+            </div>
+            <span class="footer-logo-text">LifeX Labs</span>
+          </div>
+          <p>Pioneering the future of health through AI-driven wearables and edge computing solutions to enhance cognitive performance and extend human longevity.</p>
+          <div class="footer-social">
+            <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+            <a href="#" class="footer-social-link" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="footer-links-container">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#about"><i class="fas fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
+            <li><a href="#research"><i class="fas fa-chevron-right" aria-hidden="true"></i> Research</a></li>
+            <li><a href="#people"><i class="fas fa-chevron-right" aria-hidden="true"></i> Our People</a></li>
+            <li><a href="#news"><i class="fas fa-chevron-right" aria-hidden="true"></i> News & Publications</a></li>
+            <li><a href="#collaboration"><i class="fas fa-chevron-right" aria-hidden="true"></i> Collaborate</a></li>
+            <li><a href="#contact"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-container">
+          <h4 class="footer-heading">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="fas fa-chevron-right" aria-hidden="true"></i> Publications</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right" aria-hidden="true"></i> Research Opportunities</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right" aria-hidden="true"></i> Student Positions</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right" aria-hidden="true"></i> Media Kit</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right" aria-hidden="true"></i> Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4 class="footer-heading">Contact Us</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>LifeX Labs<br>123 Innovation Drive, Suite 300<br>Hanover, NH 03755</div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div><a href="mailto:contact@lifexlabs.org">contact@lifexlabs.org</a></div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div><a href="tel:+16031234567">(603) 123-4567</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 LifeX Labs. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      const isOpen = navLinks.classList.contains('active');
+      mobileMenuBtn.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+      mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Scroll Animation
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Animate on Scroll
+    const animateElements = document.querySelectorAll('.animate-fadeIn');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    animateElements.forEach(element => {
+      observer.observe(element);
+    });
+
+    // People Tabs
+    const peopleTabs = document.querySelectorAll('.people-tab');
+    const peopleContents = document.querySelectorAll('.people-content');
+
+    peopleTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs and contents
+        peopleTabs.forEach(t => t.classList.remove('active'));
+        peopleContents.forEach(c => c.classList.remove('active'));
+        
+        // Add active class to clicked tab
+        tab.classList.add('active');
+        
+        // Show corresponding content
+        const tabId = tab.getAttribute('data-tab');
+        document.getElementById(`${tabId}-people`).classList.add('active');
+      });
+    });
+
+    // Form Validation and Submission
+    const meetingForm = document.getElementById('meeting-form');
+    meetingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Basic form validation
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      
+      if (!name || !email || !message) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+      
+      // In a real implementation, you would send the form data to a server
+      alert('Thank you for your interest! We will contact you shortly to schedule a meeting.');
+      meetingForm.reset();
+    });
+    
+    // Newsletter Form Submission
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const email = e.target.querySelector('input[type="email"]').value.trim();
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          alert('Please enter a valid email address.');
+          return;
+        }
+        
+        alert('Thank you for subscribing to our newsletter!');
+        newsletterForm.reset();
+      });
+    }
+    
+    // Smooth Scrolling for Navigation Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          // Close mobile menu if open
+          if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+          }
+          
+          // Scroll to the target element
+          window.scrollTo({
+            top: targetElement.offsetTop - 80, // Offset for header height
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Accessibility Enhancement - Add focus to form fields when they contain errors
+    const formControls = document.querySelectorAll('.form-control');
+    formControls.forEach(control => {
+      control.addEventListener('invalid', function(e) {
+        e.preventDefault();
+        this.focus();
+      }, true);
+    });
+  </script>
+</body>
+</html>
