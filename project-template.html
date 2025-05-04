@@ -43,6 +43,14 @@
       --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
       --transition: all 0.3s ease;
+      
+      /* Tab animation colors */
+      --tab-color-1: #34D399;
+      --tab-color-2: #818CF8;
+      --tab-color-3: #F472B6;
+      --tab-color-4: #FBBF24;
+      --tab-color-5: #60A5FA;
+      --tab-color-6: #A78BFA;
     }
 
     /* ===== Base Styles ===== */
@@ -156,7 +164,7 @@
       box-shadow: var(--shadow-md);
     }
 
-    /* ===== Header Styles ===== */
+    /* ===== Header Styles with Animation ===== */
     header {
       background-color: var(--bg-white);
       border-bottom: 1px solid var(--border-light);
@@ -208,11 +216,13 @@
       list-style: none;
     }
 
+    /* New animated tab styles */
     .nav-links a {
       color: var(--text);
       font-weight: 500;
       position: relative;
       padding: 0.5rem 0;
+      overflow: hidden;
     }
 
     .nav-links a::after {
@@ -222,26 +232,97 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--primary);
-      transition: var(--transition);
+      transition: width 0.3s ease;
     }
 
-    .nav-links a:hover::after, .nav-links a:focus::after {
+    .nav-links li:nth-child(1) a::after {
+      background: var(--tab-color-1);
+    }
+
+    .nav-links li:nth-child(2) a::after {
+      background: var(--tab-color-2);
+    }
+
+    .nav-links li:nth-child(3) a::after {
+      background: var(--tab-color-3);
+    }
+
+    .nav-links li:nth-child(4) a::after {
+      background: var(--tab-color-4);
+    }
+
+    .nav-links li:nth-child(5) a::after {
+      background: var(--tab-color-5);
+    }
+
+    .nav-links li:nth-child(6) a::after {
+      background: var(--tab-color-6);
+    }
+
+    .nav-links a:hover::after, 
+    .nav-links a:focus::after {
       width: 100%;
     }
 
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: var(--text-dark);
-      cursor: pointer;
+    /* Tab color animation */
+    @keyframes tabColorPulse {
+      0% { color: var(--text); }
+      50% { color: var(--tab-color-1); }
+      100% { color: var(--text); }
     }
 
-    .mobile-menu-btn:focus-visible {
-      outline: 2px solid var(--primary);
-      outline-offset: 3px;
+    .nav-links li:nth-child(1) a:hover {
+      animation: tabColorPulse 1.5s infinite;
+      animation-delay: 0s;
+    }
+
+    .nav-links li:nth-child(2) a:hover {
+      animation: tabColorPulse 1.5s infinite;
+      animation-delay: 0.2s;
+    }
+
+    .nav-links li:nth-child(3) a:hover {
+      animation: tabColorPulse 1.5s infinite;
+      animation-delay: 0.4s;
+    }
+
+    .nav-links li:nth-child(4) a:hover {
+      animation: tabColorPulse 1.5s infinite;
+      animation-delay: 0.6s;
+    }
+
+    .nav-links li:nth-child(5) a:hover {
+      animation: tabColorPulse 1.5s infinite;
+      animation-delay: 0.8s;
+    }
+
+    .nav-links li:nth-child(6) a:hover {
+      animation: tabColorPulse 1.5s infinite;
+      animation-delay: 1s;
+    }
+
+    /* Additional animation for active tab */
+    .nav-links a.active {
+      position: relative;
+    }
+
+    .nav-links a.active::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      animation: pulseIndicator 2s infinite;
+    }
+
+    @keyframes pulseIndicator {
+      0% { transform: translateX(-50%) scale(1); opacity: 1; }
+      50% { transform: translateX(-50%) scale(1.5); opacity: 0.5; }
+      100% { transform: translateX(-50%) scale(1); opacity: 1; }
     }
 
     /* ===== Project Header ===== */
@@ -893,7 +974,7 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header with animated tabs -->
   <header id="header">
     <div class="header-container">
       <div class="logo">
@@ -1210,7 +1291,7 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- JavaScript for tab animations -->
   <script>
     // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -1233,7 +1314,39 @@
       }
     });
 
-    // Project Tabs
+    // Tab color animation
+    const navItems = document.querySelectorAll('.nav-links a');
+    
+    // Set custom properties for each tab
+    navItems.forEach((item, index) => {
+      const tabColors = [
+        '#34D399', // green
+        '#818CF8', // indigo
+        '#F472B6', // pink
+        '#FBBF24', // amber
+        '#60A5FA', // blue
+        '#A78BFA'  // purple
+      ];
+      
+      // Update the CSS variable for this specific tab
+      item.style.setProperty('--tab-color-' + (index + 1), tabColors[index]);
+      
+      // Add rainbow effect on hover
+      item.addEventListener('mouseover', function() {
+        let hue = 0;
+        const interval = setInterval(() => {
+          hue = (hue + 1) % 360;
+          this.style.setProperty('--tab-color-' + (index + 1), `hsl(${hue}, 80%, 60%)`);
+        }, 50);
+        
+        item.addEventListener('mouseout', function() {
+          clearInterval(interval);
+          this.style.setProperty('--tab-color-' + (index + 1), tabColors[index]);
+        }, { once: true });
+      });
+    });
+
+    // Project tabs functionality
     const projectTabs = document.querySelectorAll('.project-tab');
     const projectTabContents = document.querySelectorAll('.project-tab-content');
 

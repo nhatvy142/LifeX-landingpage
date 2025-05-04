@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { getNews, getPeople, getProjects } from "@/lib/contentful"
@@ -218,12 +220,17 @@ export default async function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.length > 0
               ? teamMembers.map((member: any) => (
-                  <div key={member.sys.id} className="card text-center p-6">
+                  <Link
+                    key={member.sys.id}
+                    href={`/people/${member.fields.slug}`}
+                    className="card text-center p-6 transition-transform hover:scale-105"
+                  >
                     <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-white dark:border-gray-800 shadow-md">
                       <Image
                         src={
                           member.fields.photo?.fields.file.url ||
                           "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" ||
+                          "/placeholder.svg" ||
                           "/placeholder.svg" ||
                           "/placeholder.svg"
                         }
@@ -243,6 +250,7 @@ export default async function Home() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-gray-500 hover:text-primary dark:text-gray-400"
+                          onClick={(e) => e.stopPropagation()}
                         >
                           <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
@@ -255,6 +263,7 @@ export default async function Home() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-gray-500 hover:text-primary dark:text-gray-400"
+                          onClick={(e) => e.stopPropagation()}
                         >
                           <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
@@ -267,6 +276,7 @@ export default async function Home() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-gray-500 hover:text-primary dark:text-gray-400"
+                          onClick={(e) => e.stopPropagation()}
                         >
                           <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path
@@ -279,7 +289,12 @@ export default async function Home() {
                         </a>
                       )}
                     </div>
-                  </div>
+                    <div className="mt-4">
+                      <span className="inline-block text-primary text-sm font-medium hover:underline">
+                        View Full Profile
+                      </span>
+                    </div>
+                  </Link>
                 ))
               : // Fallback content when no team members are available
                 Array.from({ length: 4 }).map((_, index) => (
@@ -313,19 +328,24 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {newsArticles.length > 0
               ? newsArticles.map((article: any) => (
-                  <div key={article.sys.id} className="card overflow-hidden">
+                  <Link
+                    key={article.sys.id}
+                    href={`/news/${article.fields.slug}`}
+                    className="card overflow-hidden transition-transform hover:scale-105"
+                  >
                     <div className="h-48 overflow-hidden">
                       <Image
                         src={
                           article.fields.featuredImage?.fields.file.url ||
                           "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" ||
                           "/placeholder.svg" ||
+                          "/placeholder.svg" ||
                           "/placeholder.svg"
                         }
                         alt={article.fields.title}
                         width={400}
                         height={200}
-                        className="w-full h-full object-cover transition-transform hover:scale-105"
+                        className="w-full h-full object-cover transition-transform hover:scale-110"
                       />
                     </div>
                     <div className="p-6">
@@ -338,10 +358,7 @@ export default async function Home() {
                       </p>
                       <h3 className="text-xl font-bold mb-3">{article.fields.title}</h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">{article.fields.excerpt}</p>
-                      <Link
-                        href={`/news/${article.fields.slug}`}
-                        className="text-primary font-medium inline-flex items-center"
-                      >
+                      <span className="text-primary font-medium inline-flex items-center">
                         Read More
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -357,9 +374,9 @@ export default async function Home() {
                             d="M14 5l7 7m0 0l-7 7m7-7H3"
                           />
                         </svg>
-                      </Link>
+                      </span>
                     </div>
-                  </div>
+                  </Link>
                 ))
               : // Fallback content when no news articles are available
                 Array.from({ length: 3 }).map((_, index) => (
@@ -401,29 +418,31 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {projects.length > 0
               ? projects.map((project: any) => (
-                  <div key={project.sys.id} className="card overflow-hidden">
+                  <Link
+                    key={project.sys.id}
+                    href={`/projects/${project.fields.slug}`}
+                    className="card overflow-hidden transition-transform hover:scale-105"
+                  >
                     <div className="h-48 overflow-hidden">
                       <Image
                         src={
                           project.fields.featuredImage?.fields.file.url ||
                           "https://images.unsplash.com/photo-1581093451887-5920828efeea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" ||
                           "/placeholder.svg" ||
+                          "/placeholder.svg" ||
                           "/placeholder.svg"
                         }
                         alt={project.fields.title}
                         width={400}
                         height={200}
-                        className="w-full h-full object-cover transition-transform hover:scale-105"
+                        className="w-full h-full object-cover transition-transform hover:scale-110"
                       />
                     </div>
                     <div className="p-6">
                       <p className="text-sm text-primary font-medium mb-2">{project.fields.category}</p>
                       <h3 className="text-xl font-bold mb-3">{project.fields.title}</h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">{project.fields.shortDescription}</p>
-                      <Link
-                        href={`/projects/${project.fields.slug}`}
-                        className="text-primary font-medium inline-flex items-center"
-                      >
+                      <span className="text-primary font-medium inline-flex items-center">
                         View Project
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -439,9 +458,9 @@ export default async function Home() {
                             d="M14 5l7 7m0 0l-7 7m7-7H3"
                           />
                         </svg>
-                      </Link>
+                      </span>
                     </div>
-                  </div>
+                  </Link>
                 ))
               : // Fallback content when no projects are available
                 Array.from({ length: 3 }).map((_, index) => (

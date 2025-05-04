@@ -43,6 +43,14 @@
       --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
       --transition: all 0.3s ease;
+      
+      /* Tab animation colors */
+      --tab-color-1: #34D399;
+      --tab-color-2: #818CF8;
+      --tab-color-3: #F472B6;
+      --tab-color-4: #FBBF24;
+      --tab-color-5: #60A5FA;
+      --tab-color-6: #A78BFA;
     }
 
     /* ===== Base Styles ===== */
@@ -63,3 +71,266 @@
       background-color: var(--bg-white);
       overflow-x: hidden;
     }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin-bottom: 1.8rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    a:hover, a:focus {
+      color: var(--primary);
+      outline: none;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .section-gray {
+      background-color: var(--bg-light);
+    }
+
+    /* ===== Header Styles with Animation ===== */
+    header {
+      background-color: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    header.scrolled {
+      box-shadow: var(--shadow-md);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      color: white;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    /* New animated tab styles */
+    .nav-links a {
+      color: var(--text);
+      font-weight: 500;
+      position: relative;
+      padding: 0.5rem 0;
+      overflow: hidden;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links li:nth-child(1) a::after {
+      background: var(--tab-color-1);
+    }
+
+    .nav-links li:nth-child(2) a::after {
+      background: var(--tab-color-2);
+    }
+
+    .nav-links li:nth-child(3) a::after {
+      background: var(--tab-color-3);
+    }
+
+    .nav-links li:nth-child(4) a::after {
+      background: var(--tab-color-4);
+    }
+
+    .nav-links li:nth-child(5) a::after {
+      background: var(--tab-color-5);
+    }
+
+    .nav-links li:nth-child(6) a::after {
+      background: var(--tab-color-6);
+    }
+
+    .nav-links a:hover::after, 
+    .nav-links a:focus::after {
+      width: 100%;
+    }
+
+    /* Tab color animation */
+    @keyframes tabColorPulse {
+      0% { color: var(--text); }
+      50% { color: var(--tab-color-1); }
+      100% { color: var(--text); }
+    }
+
+    .nav-links li:nth-child(1) a:hover {
+      animation: tabColorPulse 1.5s infinite;
+      animation-delay: 0s;
+    }
+
+    .nav-links li:nth-child(2) a:hover {
+      animation: tabColorPulse 1.5s infinite;
+      animation-delay: 0.2s;
+    }
+
+    .nav-links li:nth-child(3) a:hover {
+      animation: tabColorPulse 1.5s infinite;
+      animation-delay: 0.4s;
+    }
+
+    .nav-links li:nth-child(4) a:hover {
+      animation: tabColorPulse 1.5s infinite;
+      animation-delay: 0.6s;
+    }
+
+    .nav-links li:nth-child(5) a:hover {
+      animation: tabColorPulse 1.5s infinite;
+      animation-delay: 0.8s;
+    }
+
+    .nav-links li:nth-child(6) a:hover {
+      animation: tabColorPulse 1.5s infinite;
+      animation-delay: 1s;
+    }
+
+    /* Rest of the CSS remains the same */
+    /* ... */
+  </style>
+</head>
+<body>
+  <!-- Header with animated tabs -->
+  <header id="header">
+    <div class="header-container">
+      <div class="logo">
+        <div class="logo-icon" aria-hidden="true">
+          <i class="fas fa-dna"></i>
+        </div>
+        <span class="logo-text">LifeX Labs</span>
+      </div>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#research">Research</a></li>
+          <li><a href="index.html#people">People</a></li>
+          <li><a href="index.html#news">News</a></li>
+          <li><a href="index.html#collaboration">Collaborate</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Rest of the HTML remains the same -->
+  <!-- ... -->
+
+  <!-- JavaScript for tab animations -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      const isOpen = navLinks.classList.contains('active');
+      mobileMenuBtn.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+      mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Scroll Animation
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Tab color animation
+    const navItems = document.querySelectorAll('.nav-links a');
+    
+    // Set custom properties for each tab
+    navItems.forEach((item, index) => {
+      const tabColors = [
+        '#34D399', // green
+        '#818CF8', // indigo
+        '#F472B6', // pink
+        '#FBBF24', // amber
+        '#60A5FA', // blue
+        '#A78BFA'  // purple
+      ];
+      
+      item.addEventListener('mouseenter', () => {
+        item.style.setProperty('--tab-color-' + (index + 1), tabColors[index]);
+      });
+    });
+  </script>
+</body>
+</html>
